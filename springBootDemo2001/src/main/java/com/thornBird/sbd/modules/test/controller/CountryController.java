@@ -17,18 +17,16 @@ public class CountryController {
 	
 	/*
 	 * http://localhost/api/getCountryByCountryId/{countryId}
-	 * @PathVariable:参数为int类型的时候引用
+	 * @PathVariable:参数为url路径上的时候引用
 	 */
 	@RequestMapping("/getCountryByCountryId/{countryId}")
 	public Country getCountryByCountryId(@PathVariable int countryId){
 		Country country = countryService.selectCountryByCountryId(countryId);
 		return country;
 	}
-	
-
 	/*
 	 * http://localhost/api/getCountryByCountryName?countryName=China
-	 * @RequestParam:参数为string类型的时候引用
+	 * @RequestParam:参数为非url路径时候引用
 	 */
 	@RequestMapping("/getCountryByCountryName")
 	public Country getCountryByCountryName(@RequestParam String countryName){

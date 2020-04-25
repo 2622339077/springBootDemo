@@ -13,5 +13,11 @@ public interface CityService {
 	PageInfo<City> getCitiesByPage(int currentPage,int pageSize,int countryId);
 	
 	Result<City> insertCity(City city);
+
+	Result<City> updateCityByCityId(City city);
+
+	Result<Object> DeleteCityByCityId(int cityId);
+
+	City getCityByCityNameAndLocalCityName(String cityName, String localCityName);
  
 }
